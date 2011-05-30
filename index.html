@@ -19,6 +19,7 @@
     h1 { font-size: 3.8em; color: #1d1a11; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
+	.groovy { margin-top: 0em; color:blue; border-style: outset; background-color: white; }
     h2 { font-size: 1.5em; color: #1d1a11; }
     h3 { text-align: center; color: #1d1a11; }
     a { color: #1d1a11; }
@@ -28,13 +29,40 @@
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
   </style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="http://jashkenas.github.com/coffee-script/extras/coffee-script.js"></script>
+
+<script type="text/coffeescript">
+msg = "world"
+inv = "you"
+
+show_message = (x,y) ->
+	$('#message').hide().text(x).fadeIn(1000,
+	-> $('#message').append('!')
+	)
+	$('#hint').hide().text(x).fadeIn(0)
+	
+
+$ -> 
+	show_message msg,inv
+	temp = inv; inv = msg; msg = temp
+	
+
+$('#message').click -> 
+	show_message msg,inv
+	temp = inv; inv = msg; msg = temp
+
+</script>
+
+
 </head>
 
 <body>
   <a href="http://github.com/victusfate/client_side_coffeescript"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
   <div id="container">
-
+	
     <div class="download">
       <a href="http://github.com/victusfate/client_side_coffeescript/zipball/master">
         <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
@@ -42,15 +70,26 @@
         <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
     </div>
 
-    <h1><a href="http://github.com/victusfate/client_side_coffeescript">client_side_coffeescript</a>
-      <span class="small">by <a href="http://github.com/victusfate">victusfate</a></span></h1>
+    <h1><a href="http://github.com/victusfate/client_side_coffeescript">client_side_coffeescript</a></h1>
+		<br/>
+		<div>
+			click <span id="hint"></span> below.
+			<h1 class="groovy">hello <span id="message"></span></h1>
+		</div>
+
+		<b>Clientside CoffeeScript</b>
+		Thanks to <a href="http://geekiriki.blogspot.com/2010/08/jquery-meets-coffeescript.html">geekiriki</a>
+		<br/>
+		<br/>
+      <span class="small">via <a href="http://github.com/victusfate">victusfate</a></span>
 
     <div class="description">
       
     </div>
 
     <h2>Contact</h2>
-<p>Mark Essel (messel@gmail.com)<br/>      </p>
+<p>Mark Essel (messel@gmail.com)
+<br/>      </p>
 
 
     <h2>Download</h2>
