@@ -42,16 +42,16 @@ show_message = (x,y) ->
 	-> $('#message').append('!')
 	)
 	$('#hint').hide().text(x).fadeIn(0)
-	
+
 
 $ -> 
 	show_message msg,inv
-	temp = inv; inv = msg; msg = temp
-	
+	[inv, msg] = [msg, inv]
+
 
 $('#message').click -> 
 	show_message msg,inv
-	temp = inv; inv = msg; msg = temp
+	[inv, msg] = [msg, inv]
 
 </script>
 
