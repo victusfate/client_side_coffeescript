@@ -30,8 +30,14 @@
     .footer { text-align:center; padding-top:30px; font-style: italic; }
   </style>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script src="http://jashkenas.github.com/coffee-script/extras/coffee-script.js"></script>
+	<script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
+	<script>
+		!window.jQuery && document.write('<script src="jquery-1.6.1.min.js"><\/script>');
+	</script>
+	<script type='text/javascript' src="http://jashkenas.github.com/coffee-script/extras/coffee-script.js"></script>  
+	<script>
+		!window.CoffeeScript && document.write('<script src="coffee-script.js"><\/script>');
+	</script>
 
 <script type="text/coffeescript">
 msg = "world"
@@ -109,11 +115,9 @@ $('#message').click ->
 
     <div class="footer">
       get the source code on GitHub : <a href="http://github.com/victusfate/client_side_coffeescript">victusfate/client_side_coffeescript</a>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="https://gist.github.com/raw/949945/07bb992e73c81e0eecddcc1cac25c2f52472c5b1/growingdivs.js"></script>    </div>
-
   </div>
 
+	<script type="text/javascript" src="growingdivs.js"></script>
   
 </body>
 </html>
